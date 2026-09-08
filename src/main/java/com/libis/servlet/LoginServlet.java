@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("member", matchedMember);
             response.sendRedirect(request.getContextPath() + "/welcome.jsp");
         } else {
-            request.setAttribute("error", "Invalid email or password. Please try again.");
+            request.setAttribute("error", "Incorrect email or password. Please try again.");
             RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
             dispatcher.forward(request, response);
         }

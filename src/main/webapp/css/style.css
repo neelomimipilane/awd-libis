@@ -1,0 +1,196 @@
+:root {
+    --bg: #EDE4D3;
+    --surface: #F7F1E4;
+    --primary: #1F3A2E;
+    --accent: #B08D57;
+    --text: #2B2118;
+    --status-out: #8C2F2F;
+    --status-available: #3F6B4F;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #161F19;
+        --surface: #1E2A22;
+        --primary: #E8DEC8;
+        --accent: #D4AF6A;
+        --text: #E8DEC8;
+        --status-out: #E08A7D;
+        --status-available: #7FB396;
+    }
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Lora', Georgia, serif;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.index-card {
+    position: relative;
+    background-color: var(--surface);
+    border: 1px solid var(--accent);
+    border-radius: 4px 4px 2px 2px;
+    width: 320px;
+    padding: 2.5rem 2rem 2rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.index-card::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--bg);
+    border: 2px solid var(--accent);
+}
+.index-card h1 {
+    margin: 0 0 0.25rem;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.index-card > p {
+    margin: 0 0 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.index-card label {
+    display: block;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.8rem;
+    color: var(--accent);
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.index-card input {
+    width: 100%;
+    padding: 0.5rem 0.6rem;
+    background-color: var(--bg);
+    border: 1px solid var(--accent);
+    border-radius: 2px;
+    color: var(--text);
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+}
+
+.index-card input:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 1px;
+}
+
+.index-card button {
+    width: 100%;
+    margin-top: 1.75rem;
+    padding: 0.65rem;
+    background-color: var(--primary);
+    color: var(--surface);
+    border: none;
+    border-radius: 2px;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.index-card button:hover {
+    opacity: 0.9;
+}
+
+.error-message {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.8rem;
+    color: var(--status-out);
+    border: 1px solid var(--status-out);
+    padding: 0.5rem 0.6rem;
+    border-radius: 2px;
+    margin-top: 1rem;
+}
+.page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.page h1 {
+    margin: 0 0 0.25rem;
+    color: var(--primary);
+    font-size: 1.8rem;
+}
+
+.page .subtitle {
+    margin: 0 0 2rem;
+    opacity: 0.8;
+}
+
+.ledger {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--surface);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.ledger th {
+    background-color: var(--primary);
+    color: var(--surface);
+    text-align: left;
+    padding: 0.7rem 1rem;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.8rem;
+    font-weight: normal;
+}
+
+.ledger td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--accent);
+}
+
+.ledger tbody tr:nth-child(even) {
+    background-color: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+.badge {
+    display: inline-block;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    border: 1px solid currentColor;
+}
+
+.badge-available {
+    color: var(--status-available);
+}
+
+.badge-out {
+    color: var(--status-out);
+}
+
+.actions a {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-decoration: none;
+    margin-right: 0.8rem;
+}
+
+.actions a:hover {
+    text-decoration: underline;
+}

@@ -10,41 +10,50 @@
 <head>
     <meta charset="UTF-8">
     <title>LIBIS - Book Catalogue</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Courier+Prime&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h1>Welcome, ${sessionScope.member.fullName}</h1>
-<p>Here is the full LIBIS book catalogue.</p>
+<div class="page">
+    <h1>Welcome, ${sessionScope.member.fullName}</h1>
+    <p class="subtitle">Here is the full LIBIS book catalogue.</p>
 
-<table border="1" cellpadding="6">
-    <thead>
-    <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Genre</th>
-        <th>Availability</th>
-        <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="book" items="${applicationScope.books}">
+    <table class="ledger">
+        <thead>
         <tr>
-            <td>${book.title}</td>
-            <td>${book.author}</td>
-            <td>${book.genre}</td>
-            <td>
-                <c:choose>
-                    <c:when test="${book.available}">Available</c:when>
-                    <c:otherwise>Checked out</c:otherwise>
-                </c:choose>
-            </td>
-            <td>
-                <a href="#">Search</a>
-                <a href="#">Borrow</a>
-                <a href="#">Reserve</a>
-            </td>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Availability</th>
+            <th>Actions</th>
         </tr>
-    </c:forEach>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <c:forEach var="book" items="${applicationScope.books}">
+            <tr>
+                <td>${book.title}</td>
+                <td>${book.author}</td>
+                <td>${book.genre}</td>
+                <td>
+                    <c:choose>
+                        <c:when test="${book.available}">
+                            <span class="badge badge-available">Available</span>
+                        </c:when>
+                        <c:otherwise>
+                            <span class="badge badge-out">Checked out</span>
+                        </c:otherwise>
+                    </c:choose>
+                </td>
+                <td class="actions">
+                    <a href="#">Search</a>
+                    <a href="#">Borrow</a>
+                    <a href="#">Reserve</a>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>

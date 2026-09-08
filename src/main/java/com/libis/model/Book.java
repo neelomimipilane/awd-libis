@@ -62,7 +62,6 @@ public class Book {
         this.synopsis = synopsis;
     }
 
-    // NOTE: isAvailable(), not getAvailable() — required so ${book.available} resolves in EL.
     public boolean isAvailable() {
         return available;
     }
