@@ -1,18 +1,18 @@
 package com.libis.model;
 
-public class Member {
+public class User {
 
-    private int memberId;
+    private int userId;
     private String firstName;
     private String lastName;
     private String email;
     private String password;
 
-    public Member() {
+    public User() {
     }
 
-    public Member(int memberId, String firstName, String lastName, String email, String password) {
-        this.memberId = memberId;
+    public User(int memberId, String firstName, String lastName, String email, String password) {
+        this.userId = memberId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -20,11 +20,11 @@ public class Member {
     }
 
     public int getMemberId() {
-        return memberId;
+        return userId;
     }
 
     public void setMemberId(int memberId) {
-        this.memberId = memberId;
+        this.userId = memberId;
     }
 
     public String getFirstName() {

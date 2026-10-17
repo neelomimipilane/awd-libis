@@ -194,3 +194,61 @@ body {
 .actions a:hover {
     text-decoration: underline;
 }
+
+/* ---- CA2 additions ---- */
+.info-message {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.8rem;
+    color: var(--status-available);
+    border: 1px solid var(--status-available);
+    padding: 0.5rem 0.6rem;
+    border-radius: 2px;
+    margin-top: 1rem;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.logout-link {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.logout-link:hover {
+    text-decoration: underline;
+}
+
+.search-bar {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 0.5rem 0.6rem;
+    background-color: var(--surface);
+    border: 1px solid var(--accent);
+    border-radius: 2px;
+    color: var(--text);
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    padding: 0.5rem 1.1rem;
+    background-color: var(--primary);
+    color: var(--surface);
+    border: none;
+    border-radius: 2px;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
